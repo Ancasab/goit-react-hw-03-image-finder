@@ -1,30 +1,36 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
 import css from '../../styles.module.css';
-import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
+import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
 
+const ImageGallery = ({ images, selectedImage }) => {
+    console.log(images); // Verifică dacă imaginile sunt afișate corect
 
-export const ImageGallery = ({images, selectedImage}) => {
-  return (
-    <ul className={css.ImageGallery}>
-          {images.map(({ id, webformatURL, tags, largeImageURL }) => (
-              <ImageGalleryItem
-                key={id}
-                  previewImg={webformatURL}
-                  tags={tags}
-              selectedImages={() => selectedImage(largeImageURL, tags)}
-            />  
-          ))}
-    </ul>
-  )
-}
+    return (
+        <ul className={css.ImageGallery}>
+            {images.map(({ id, webformatURL, tags, largeImageURL }) => (
+                <ImageGalleryItem
+                    key={id}
+                    previewImg={webformatURL}
+                    tags={tags}
+                    selectedImage={() => selectedImage(largeImageURL, tags)} // Asigură-te că transmite corect URL-ul mare
+                />
 
-ImageGallery.propTypes = {
-  images: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-    })
-  ),
-  selectedImage: PropTypes.func,
+            ))}
+        </ul>
+    );
 };
 
+ImageGallery.propTypes = {
+    images: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            webformatURL: PropTypes.string.isRequired, // Asigură-te că adaugi și celelalte proprietăți necesare
+            tags: PropTypes.string,
+            largeImageURL: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+    selectedImage: PropTypes.func.isRequired, // Marchez ca necesar
+};
+
+export default ImageGallery;

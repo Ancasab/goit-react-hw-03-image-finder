@@ -7,19 +7,12 @@ const fetchApi = async (searchQuery, page) => {
     try {
         const response = await axios.get(
             `?q=${searchQuery}&page=${page}&key=${KEY}&image_type=photo&orientation=horizontal&per_page=12`
-
         );
+        return response.data; // Returnează datele
     } catch (error) {
         console.error("Error fetching images", error);
-        return [];
+        return []; // Returnează un array gol în caz de eroare
     }
 };
 
-
-// async function fetchApi(searchQuery, page) {
-//     const response = await axios.get(
-//         `?q=${searchQuery}&page=${page}&key=${KEY}&image_type=photo&orientation=horizontal&per_page=12`
-
-//     );
-//     return response.data;
-// }
+export default fetchApi;

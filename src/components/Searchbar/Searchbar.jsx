@@ -1,26 +1,3 @@
-// import React from 'react'
-
-// const Searchbar = (onSubmit) => {
-//   return (
-//     <header class="searchbar">
-//   <form class="form">
-//     <button type="submit" class="button">
-//       <span class="button-label">Search</span>
-//     </button>
-
-//     <input
-//       class="input"
-//       type="text"
-//       autocomplete="off"
-//       autofocus
-//       placeholder="Search images and photos"
-//     />
-//   </form>
-// </header>
-//   )
-// }
-
-// export default Searchbar
 
 import { Component } from 'react';
 import { toast } from 'react-toastify';
@@ -55,7 +32,7 @@ export default class SearchBar extends Component {
     return (
         <header className={css.Searchbar}>
             <form className={css.SearchForm} onSubmit={this.handleSubmit}>
-                <button className={css.SearchFormButton} type="submit"><span className={css.SearchFormButtonLabel}>Search</span>
+                <button className={css.SearchFormButton} type="submit"><span className={css.SearchFormButtonLabel}>&#128269;</span>
                 </button>
                 <input
                     className={css.SearchFormInput}
