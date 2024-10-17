@@ -113,7 +113,7 @@ img {
   padding-right: 4px;
 }
 
-.SearchForm-input::placeholder {
+.SearchFormInput::placeholder {
   font: inherit;
   font-size: 18px;
 }

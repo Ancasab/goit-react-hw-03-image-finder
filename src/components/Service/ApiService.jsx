@@ -8,10 +8,10 @@ const fetchApi = async (searchQuery, page) => {
         const response = await axios.get(
             `?q=${searchQuery}&page=${page}&key=${KEY}&image_type=photo&orientation=horizontal&per_page=12`
         );
-        return response.data; // Returnează datele
+        return response.data; 
     } catch (error) {
         console.error("Error fetching images", error);
-        return []; // Returnează un array gol în caz de eroare
+        return []; 
     }
 };
 

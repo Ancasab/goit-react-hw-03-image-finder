@@ -32,7 +32,7 @@ export default class SearchBar extends Component {
     return (
         <header className={css.Searchbar}>
             <form className={css.SearchForm} onSubmit={this.handleSubmit}>
-                <button className={css.SearchFormButton} type="submit"><span className={css.SearchFormButtonLabel}>&#128269;</span>
+                <button className={css.SearchFormButton} type="submit" aria-label="Search">🔍
                 </button>
                 <input
                     className={css.SearchFormInput}
